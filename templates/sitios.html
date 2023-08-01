@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+</head>
+<body>
+    <a href="/agregasitios">Ingresar una nueva categoria</a>
+    <br><br>
+    <table >
+        <thead>
+            <tr>
+                <th>ID sitios</th>
+                <th>Nombre</th>
+                <th>id_categorias</th>
+                <th>sector</th>
+                <th>localizacion</th>
+                <th>calificacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for med in res%}
+            <tr>
+                <td>{{med [0]}}</td>
+
+                <td>{{med [1]}}</td>
+
+                <td>{{med [2]}}</td>
+
+                <td>{{med [3]}}</td>
+
+                <td>{{med [4]}}</td>
+
+                <td>{{med [5]}}</td>
+                
+                <td><a href="/editasit/{{med[0]}}">Editar</a></td>
+                <td><a onclick="return confirm('¿seguro quiere eliminar a este médico?')" href="/borrasit/{{med[0]}}">Borrar</a></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
